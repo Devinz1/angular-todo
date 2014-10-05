@@ -1,0 +1,33 @@
+<html>
+<head>
+  <title>todo</title>
+</head>
+<body ng-app="todoList">
+  <div ng-controller="mainCtrl">
+
+    <!-- ng-model enables the binding of data -->
+    <input type="text" ng-model="newTodo">
+    <!--ng-click we pass it a function that will get
+    called when we click on the button  -->
+    <button ng-click="addToList()">add</button>
+
+    </br>
+    
+    <input type="text" ng-model="removeTodo">
+    <button ng-click="pullFromList()">Remove</button>
+    
+    <!-- ng-repeat will iterate through the array that our
+    controller passes to the view and it will express
+    the title property -->
+    <ul>
+      <li ng-repeat="todo in todos">{{todo.title}}</li>
+    </ul>
+  </div>
+
+</body>
+  <script type="text/javascript" src="js/angular.min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/todoService.js"></script>
+  <script type="text/javascript" src="js/mainCtrl.js"></script>
+
+</html>
